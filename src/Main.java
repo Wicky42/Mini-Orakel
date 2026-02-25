@@ -1,3 +1,5 @@
+private static final Random RANDOM = new Random();
+
 void main(){
 
     // Daten für das Orakel
@@ -15,7 +17,7 @@ void main(){
     System.out.println("Bitte gib dein Lieblingsgetränk ein");
     String getraenk = scanner.nextLine();
     int number;
-    System.out.println("Jetzt gib nur noch eine Zahl zwischen 0 und 4 an.");
+    System.out.println("Jetzt gib nur noch eine Zahl größer als 3 an.");
     do{
         number = scanner.nextInt();
         if(!isValidNumber(number)){
@@ -49,11 +51,10 @@ void main(){
     System.out.println(output);
 }
 
-private boolean isValidNumber(int number){
+private static boolean isValidNumber(int number){
     return (number > 3);
 }
 
-private int getRandom(){
-    Random random = new Random();
-    return random.nextInt(6);
+private static int getRandom(){
+    return RANDOM.nextInt(6);
 }
